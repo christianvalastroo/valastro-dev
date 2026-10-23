@@ -1,85 +1,111 @@
-<div align="center">
-  <img src="./public/favicon.svg" width="88" alt="Logo valastro-dev" />
+# valastro-dev
 
-  # valastro-dev
+Portfolio personale di **Christian Valastro**, Junior IT Support / Help Desk / Full Stack Web Developer a Catania.
 
-  **Portfolio 3D di Christian Valastro — Web Developer**
+Assistenza informatica e sviluppo web: competenze hardware e software, esperienza pratica, formazione e progetti in un sito vetrina con grafica editoriale, scena 3D e animazioni.
 
-  Esperienze web veloci, curate e semplici da usare.
+[Visita il portfolio](https://valastro-dev.netlify.app/) · [LinkedIn](https://www.linkedin.com/in/christian-valastro/) · [GitHub](https://github.com/christianvalastroo)
 
-  [🌐 Visita il portfolio](https://valastro-dev.netlify.app) · [💬 Contattami su WhatsApp](https://wa.me/37060266624)
-</div>
+## Contenuti
 
----
+- Presentazione del profilo IT e web.
+- Diagnostica hardware, riparazione di PC, MacBook e smartphone, installazione software e utilizzo di Windows e macOS.
+- Esperienza pratica nell’assistenza informatica, problem solving e attenzione al cliente.
+- Certificazioni EPICODE Full Stack Web Development ed ECDL.
+- Progetti con anteprime reali, pulsante **Apri progetto** e collegamento al codice.
+- Servizi di sviluppo web e contatti diretti.
 
-![Anteprima reale del portfolio valastro-dev](./public/portfolio-preview.jpg)
+L’interfaccia mantiene la palette scura con accenti arancio e menta, la navigazione laterale, il menu mobile e il supporto alla preferenza di movimento ridotto.
 
-## ✨ Il progetto
+## Progetti
 
-**valastro-dev** è il mio portfolio personale: uno spazio digitale in cui presento i progetti che ho realizzato, le tecnologie che utilizzo e i servizi che posso offrire.
+| Progetto | Esperienza | Codice |
+| --- | --- | --- |
+| **EasyTrip** | Travel planner full-stack per attività, budget, note e checklist. [Apri l’app](https://easytrip-sigma.vercel.app/). | [Repository](https://github.com/christianvalastroo/Easytrip) |
+| **Inviti per compleanno · Busta interattiva** | Busta animata, musica, coriandoli, conto alla rovescia e conferma su WhatsApp. Demo inclusa nel portfolio. | [Repository](https://github.com/christianvalastroo/invito-compleanno) |
+| **Inviti per compleanno · Eleganza e animazione** | Busta bordeaux e oro, animazioni, musica e informazioni sull’evento. Demo inclusa nel portfolio. | [Repository](https://github.com/christianvalastroo/invito-Martina) |
 
-L’esperienza combina design editoriale, elementi 3D, animazioni durante lo scroll e uno sfondo interattivo di particelle, mantenendo velocità e usabilità su desktop e smartphone.
+### Demo degli inviti
 
-## 🚀 Funzionalità
+Gli inviti sono siti statici autonomi in `public/progetti/`, distribuiti insieme al portfolio. Non richiedono backend o installazioni aggiuntive. Dalle schede, **Apri progetto** apre la demo in una nuova scheda; **Vedi codice** apre il repository GitHub.
 
-- 🧊 Scultura 3D interattiva nella hero
-- 🏜️ Sfondo animato con effetto sabbia
-- 🎬 Schermata di caricamento personalizzata
-- 🖼️ Anteprime reali dei progetti
-- 🧭 Menu laterale e navigazione mobile animata
-- 🛠️ Sezione servizi con richiesta di preventivo privato
-- 📱 Design completamente responsive
-- ♿ Supporto per la modalità movimento ridotto
-- 🔗 Contatti diretti tramite email, LinkedIn e WhatsApp
+Con il server locale avviato, aggiungere al suo indirizzo uno di questi percorsi:
 
-## 🧰 Tecnologie
+- `/progetti/busta-interattiva/index.html`
+- `/progetti/invito-elegante/index.html`
+
+I percorsi restano validi anche nella build di produzione. Audio, video e sfondo degli inviti vengono richiesti dalle rispettive demo, non dalla pagina principale del portfolio.
+
+Le copie locali sono indipendenti dai repository originali. Per aggiornarle, riportare HTML, CSS, JavaScript e risorse nella rispettiva cartella e aggiornare l’anteprima in `src/assets/projects/` se cambia la grafica.
+
+## Tecnologie
 
 | Area | Strumenti |
 | --- | --- |
-| Frontend | React, JavaScript, HTML, CSS |
-| 3D | Three.js, React Three Fiber, Drei |
+| Interfaccia | React, JavaScript, HTML, CSS, Lucide |
+| Scena 3D | Three.js, React Three Fiber, Drei |
 | Animazioni | GSAP, ScrollTrigger |
-| Tooling | Vite, oxlint, npm |
-| Deploy | Netlify |
+| Sviluppo e build | Vite, npm |
+| Analisi statica | oxlint |
+| Demo degli inviti | HTML, CSS e JavaScript senza dipendenze npm |
 
-## 💼 Progetti in evidenza
+## Avvio locale
 
-| Progetto | Descrizione | Link |
-| --- | --- | --- |
-| **EasyTrip** | Travel planner full-stack per organizzare attività, budget, note e checklist | [Apri l’app](https://easytrip-sigma.vercel.app/) |
-| **Invito del 18°** | Invito digitale interattivo progettato per smartphone | [Apri l’app](https://invito-18.vercel.app/) |
-| **Next Project** | Nuova esperienza attualmente in sviluppo | In arrivo ✨ |
-
-## 🧑‍💻 Avvio locale
+Requisiti: Node.js `20.19+` oppure `22.12+` e npm, compatibili con Vite 8.
 
 ```bash
 git clone https://github.com/christianvalastroo/Portafolio.git
 cd Portafolio
-npm install
+npm ci
 npm run dev
 ```
 
-Il progetto sarà disponibile all’indirizzo mostrato da Vite nel terminale.
+Aprire l’indirizzo mostrato da Vite nel terminale.
 
-## 📜 Comandi
+## Comandi
+
+| Comando | Funzione |
+| --- | --- |
+| `npm run dev` | Avvia il server di sviluppo. |
+| `npm run lint` | Esegue l’analisi statica del codice. |
+| `npm run build` | Genera il sito in `dist/`, incluse le demo. |
+| `npm run preview` | Serve localmente la build già generata. |
+
+Per verificare la versione di produzione:
 
 ```bash
-npm run dev      # Avvia lo sviluppo locale
-npm run build    # Genera la versione di produzione
-npm run lint     # Controlla la qualità del codice
-npm run preview  # Mostra la build di produzione
+npm run lint
+npm run build
+npm run preview
 ```
 
-## 📬 Contatti
+La scena 3D è caricata separatamente. Vite può segnalare che il suo bundle supera 500 kB: è un avviso sulle dimensioni, non un errore di compilazione.
 
-- ✉️ [valastro.dev@outlook.it](mailto:valastro.dev@outlook.it)
-- 💬 [WhatsApp](https://wa.me/37060266624)
-- 💼 [LinkedIn](https://www.linkedin.com/in/christian-valastro/)
-- 🐙 [GitHub](https://github.com/christianvalastroo)
+## Struttura
 
----
+```text
+src/
+  App.jsx                 Contenuti, navigazione e schede dei progetti
+  App.css                 Stili e layout responsive
+  assets/projects/        Anteprime dei progetti
+  components/             Scena 3D, sfondo ed effetti
+  utils/                  Funzioni di supporto
+public/
+  progetti/
+    busta-interattiva/     Primo invito completo di risorse
+    invito-elegante/       Secondo invito completo di risorse
+index.html                Metadati e punto di ingresso
+```
 
-<div align="center">
-  Realizzato con cura a Catania 🌋<br />
-  <strong>valastro-dev · v1.0.0</strong>
-</div>
+## Pubblicazione
+
+Il sito è predisposto per hosting statico. Su Netlify usare `npm run build` come comando di build e `dist` come cartella di pubblicazione. Le demo vengono copiate automaticamente da `public/progetti/`.
+
+Commit e build locali non pubblicano il sito: il rilascio dipende dalla configurazione del servizio di hosting e dal relativo flusso di deploy.
+
+## Contatti
+
+- [Email](mailto:valastro.dev@outlook.it)
+- [WhatsApp](https://wa.me/37060266624)
+- [LinkedIn](https://www.linkedin.com/in/christian-valastro/)
+- [GitHub](https://github.com/christianvalastroo)
