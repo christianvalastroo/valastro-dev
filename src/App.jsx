@@ -240,11 +240,11 @@ function App() {
         <section className="hero" id="home">
           <div className="hero__grid" aria-hidden="true" />
           <div className="hero__copy">
-            <div className="eyebrow"><span />IT Support · Web Development</div>
+            <div className="eyebrow"><span />Christian Valastro · Catania</div>
             <h1>
-              Build.<br />
-              Break.<br />
-              <em>Make it better.</em>
+              Assistenza<br />
+              informatica.<br />
+              <em>Sviluppo web.</em>
             </h1>
             <p>
               Sono Christian Valastro. Unisco assistenza informatica e sviluppo web:

@@ -63,7 +63,7 @@ main { position: relative; z-index: 1; margin-left: 116px; }
 .hero__copy { position: relative; z-index: 2; align-self: center; padding: 82px clamp(36px, 5vw, 90px); }
 .eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 34px; text-transform: uppercase; letter-spacing: .2em; color: #b5b1aa; font: 500 .66rem DM Mono, monospace; }
 .eyebrow span { width: 38px; height: 2px; background: var(--accent); }
-.hero h1 { margin: 0; max-width: 690px; font-size: clamp(4.2rem, 7.2vw, 8.6rem); line-height: .78; letter-spacing: -.075em; text-transform: uppercase; font-weight: 900; }
+.hero h1 { margin: 0; max-width: 690px; font-size: clamp(2.8rem, 4.5vw, 5.4rem); line-height: .95; letter-spacing: -.075em; text-transform: uppercase; font-weight: 900; }
 .hero h1 em { display: inline-block; color: var(--accent); font-style: normal; transform: translateX(7%); white-space: nowrap; }
 .hero__copy > p { max-width: 520px; margin: 42px 0 0; color: #aaa6a0; font-size: clamp(.94rem, 1.15vw, 1.1rem); line-height: 1.75; }
 .hero__actions { display: flex; gap: 14px; margin-top: 34px; }
@@ -209,7 +209,7 @@ main { position: relative; z-index: 1; margin-left: 116px; }
   .hero { grid-template-columns: 1fr; min-height: 100svh; }
   .hero__copy { align-self: end; padding-bottom: 104px; }
   .hero__visual { position: absolute; inset: 0 0 16% 28%; opacity: .72; }
-  .hero h1 { font-size: clamp(4rem, 11vw, 7rem); }
+  .hero h1 { font-size: clamp(2.8rem, 7vw, 5rem); }
   .hero__copy > p { max-width: 430px; }
 }
 
@@ -229,7 +229,7 @@ main { position: relative; z-index: 1; margin-left: 116px; }
   .hero__visual { inset: 0 0 42% 8%; min-height: 0; opacity: .58; }
   .hero__copy { position: absolute; inset: auto 0 46px; padding: 28px 20px; }
   .eyebrow { margin-bottom: 24px; font-size: .56rem; }
-  .hero h1 { font-size: clamp(3.45rem, 17vw, 5.5rem); line-height: .82; }
+  .hero h1 { font-size: clamp(2.3rem, 11.5vw, 4.5rem); line-height: .95; }
   .hero h1 em { transform: none; white-space: normal; }
   .hero__copy > p { margin-top: 26px; font-size: .9rem; line-height: 1.6; max-width: 90%; }
   .hero__actions { margin-top: 24px; gap: 8px; }
