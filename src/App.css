@@ -265,3 +265,46 @@ main { position: relative; z-index: 1; margin-left: 116px; }
   .contact__mail svg { width: 18px; flex: 0 0 auto; }
   .contact__bottom { flex-direction: column; gap: 24px; padding-top: 70px; }
 }
+
+/* IT profile: the existing palette, typography and bordered panels. */
+.hero__copy > .hero__role { margin-top: 20px; max-width: 480px; color: var(--paper); font: 500 .72rem/1.8 DM Mono, monospace; }
+.hero__actions { flex-wrap: wrap; }
+.eyebrow { line-height: 1.7; }
+.eyebrow span { flex-shrink: 0; }
+.sidebar nav { gap: clamp(16px, 3.5vh, 34px); }
+.it-expertise, .certifications { padding: 120px clamp(28px, 6vw, 110px); background: rgba(13,13,13,.88); border-bottom: 1px solid var(--line); }
+.it-expertise__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.it-card { padding: 32px; display: flex; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: linear-gradient(145deg, rgba(139,245,220,.04), transparent); }
+.it-card__top { display: flex; align-items: center; justify-content: space-between; color: var(--mint); font: .6rem DM Mono, monospace; }
+.it-card__top svg { width: 28px; height: 28px; stroke-width: 1.4; }
+.it-card h3 { margin: 48px 0 20px; font-size: clamp(1.8rem, 2.7vw, 3.2rem); line-height: 1; letter-spacing: -.05em; }
+.it-card > p, .certification-card > p { color: var(--muted); font-size: .9rem; line-height: 1.8; }
+.it-card ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 24px 0 0; margin: auto 0 0; }
+.it-card li { padding: 8px 10px; border: 1px solid var(--line); color: var(--mint); font: .55rem DM Mono, monospace; }
+.about__experience { border-top: 1px solid #09090930; border-bottom: 1px solid #09090930; padding: 20px 0; margin: 28px 0; }
+.about__experience h3 { margin: 0; font-size: 1.2rem; letter-spacing: -.03em; }
+.about__experience p { font-size: 1rem; }
+.certifications__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.certification-card { border: 1px solid var(--line); border-top: 2px solid var(--accent); padding: 36px; }
+.certification-card > span { color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font: .6rem DM Mono, monospace; }
+.certification-card h3 { margin: 36px 0 16px; font-size: clamp(2.5rem, 4vw, 4.5rem); letter-spacing: -.06em; }
+.certification-card > .certification-card__title { color: var(--paper); font-size: 1.15rem; }
+.contact__intro { max-width: 650px; margin: -30px 0 40px; color: var(--muted); font-size: 1rem; line-height: 1.8; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--mint); outline-offset: 5px; }
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .it-expertise .section-heading, .certifications .section-heading { grid-template-columns: 1fr; gap: 26px; }
+  .it-expertise__grid { grid-template-columns: 1fr; }
+  .it-card h3 { margin-top: 28px; }
+}
+@media (max-width: 700px) {
+  .hero { min-height: max(100svh, 780px); }
+  .hero__copy > .hero__role { max-width: 95%; font-size: .65rem; margin-top: 16px; }
+  .sidebar nav { gap: 20px; }
+  .sidebar nav a { font-size: 1.1rem; }
+  .it-expertise, .certifications { padding: 85px 20px; }
+  .it-expertise__grid, .certifications__grid { grid-template-columns: 1fr; }
+  .it-card, .certification-card { padding: 28px 22px; }
+  .it-card h3 { margin-top: 32px; }
+  .contact__intro { margin-top: -20px; font-size: .9rem; }
+}

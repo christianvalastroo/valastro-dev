@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { ArrowDownRight, ArrowUpRight, Blocks, BriefcaseBusiness, Code2, Mail, MessageCircle, PartyPopper, PanelsTopLeft, ShoppingBag, Smartphone, UtensilsCrossed } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight, Blocks, BriefcaseBusiness, Code2, MonitorCog, Wrench, HardDrive, Mail, MessageCircle, PartyPopper, PanelsTopLeft, ShoppingBag, Smartphone, UtensilsCrossed } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import easytripPreview from './assets/projects/easytrip.png'
@@ -15,10 +15,11 @@ const Scene3D = lazy(() => import('./components/Scene3D'))
 
 const navItems = [
   { label: 'Home', href: '#home', index: '01' },
-  { label: 'Progetti', href: '#progetti', index: '02' },
-  { label: 'Servizi', href: '#servizi', index: '03' },
-  { label: 'Chi sono', href: '#chi-sono', index: '04' },
-  { label: 'Contatti', href: '#contatti', index: '05' },
+  { label: 'Competenze IT', href: '#competenze-it', index: '02' },
+  { label: 'Progetti', href: '#progetti', index: '03' },
+  { label: 'Servizi', href: '#servizi', index: '04' },
+  { label: 'Profilo', href: '#chi-sono', index: '05' },
+  { label: 'Contatti', href: '#contatti', index: '08' },
 ]
 
 const projects = [
@@ -93,6 +94,27 @@ const services = [
     title: 'Mobile first',
     description: 'Landing page e interfacce che funzionano bene su ogni schermo, curate dal primo tap all’ultima sezione.',
     icon: Smartphone,
+  },
+]
+
+const itSkills = [
+  {
+    title: 'Diagnostica hardware',
+    description: 'Individuazione dei malfunzionamenti, analisi dei sintomi e verifica dei componenti per capire l’origine del problema.',
+    icon: HardDrive,
+    tags: ['Diagnostica', 'Problem solving'],
+  },
+  {
+    title: 'Riparazione dispositivi',
+    description: 'Assistenza pratica e riparazione di PC, MacBook e smartphone, con attenzione al funzionamento del dispositivo e alle esigenze di chi lo usa.',
+    icon: Wrench,
+    tags: ['PC', 'MacBook', 'Smartphone'],
+  },
+  {
+    title: 'Software e sistemi',
+    description: 'Installazione e configurazione software, utilizzo di Windows e macOS e supporto nella risoluzione dei problemi quotidiani.',
+    icon: MonitorCog,
+    tags: ['Windows', 'macOS', 'Software'],
   },
 ]
 
@@ -218,18 +240,20 @@ function App() {
         <section className="hero" id="home">
           <div className="hero__grid" aria-hidden="true" />
           <div className="hero__copy">
-            <div className="eyebrow"><span />· Web developer ·</div>
+            <div className="eyebrow"><span />IT Support · Web Development</div>
             <h1>
               Build.<br />
               Break.<br />
               <em>Make it better.</em>
             </h1>
             <p>
-              Sono Christian Valastro. Trasformo idee in esperienze web veloci,
+              Sono Christian Valastro. Unisco assistenza informatica e sviluppo web:
+              risolvo problemi hardware e software e creo esperienze digitali
               curate e semplici da usare.
             </p>
+            <p className="hero__role">Junior IT Support / Help Desk / Full Stack Web Developer</p>
             <div className="hero__actions">
-              <a className="button button--primary" href="#progetti">Scopri i progetti <ArrowDownRight /></a>
+              <a className="button button--primary" href="#competenze-it">Scopri le competenze <ArrowDownRight /></a>
               <a className="button button--ghost" href="mailto:valastro.dev@outlook.it">Parliamone</a>
             </div>
           </div>
@@ -243,8 +267,8 @@ function App() {
           </div>
 
           <div className="hero__meta">
-            <span>React / Node.js / MongoDB</span>
-            <span className="availability"><i /> Disponibile per collaborazioni</span>
+            <span>Hardware / Windows / macOS / Full Stack</span>
+            <span className="availability"><i /> Disponibile per opportunità IT e web</span>
           </div>
 
           <a className="scroll-cue" href="#progetti">
@@ -252,9 +276,27 @@ function App() {
           </a>
         </section>
 
+        <section className="it-expertise" id="competenze-it" aria-labelledby="it-heading">
+          <header className="section-heading">
+            <span>02 / Competenze IT</span>
+            <h2 id="it-heading">Hardware e software.<br /><em>Soluzioni concrete.</em></h2>
+            <p>Dalla diagnosi di un dispositivo al supporto nell’uso del software: competenze pratiche al servizio delle persone.</p>
+          </header>
+          <div className="it-expertise__grid">
+            {itSkills.map(({ title, description, icon: Icon, tags }, index) => (
+              <article className="it-card" key={title}>
+                <div className="it-card__top"><span>0{index + 1}</span><Icon aria-hidden="true" /></div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <ul aria-label="Ambiti di competenza">{tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="projects" id="progetti">
           <header className="section-heading">
-            <span>02 / Selected work</span>
+            <span>03 / Progetti web</span>
             <h2>Progetti che risolvono.<br /><em>Interfacce che restano.</em></h2>
             <p>Dal problema al prodotto: ogni progetto racconta una scelta, una sfida e qualcosa che ho imparato.</p>
           </header>
@@ -293,7 +335,7 @@ function App() {
         <section className="services" id="servizi">
           <div className="services__glow" aria-hidden="true" />
           <header className="services__heading">
-            <span>03 / Cosa posso creare</span>
+            <span>04 / Cosa posso creare</span>
             <h2>La tua idea.<br /><em>Costruita su misura.</em></h2>
             <div className="services__intro">
               <p>Ogni progetto parte da una conversazione. Obiettivi, stile e funzionalità vengono definiti insieme.</p>
@@ -334,12 +376,19 @@ function App() {
 
         <section className="about" id="chi-sono">
           <div className="about__intro">
-            <span>04 / Chi sono</span>
-            <h2>Curiosità,<br />codice e <em>costanza.</em></h2>
+            <span>05 / Profilo ed esperienza</span>
+            <h2>Curiosità,<br />tecnica e <em>ascolto.</em></h2>
           </div>
           <div className="about__copy">
-            <p className="about__lead">Sono Christian Valastro, web developer.</p>
-            <p>Creo applicazioni moderne e intuitive, curando sia l’esperienza visiva sia la struttura tecnica. Sto costruendo il mio percorso full-stack attraverso progetti concreti, sperimentazione continua e attenzione ai dettagli.</p>
+            <p className="about__lead">Un approccio pratico, dalle persone alla tecnologia.</p>
+            <p>Il mio percorso unisce la pratica nell’assistenza informatica alla formazione full-stack. Mi occupo di diagnostica hardware, riparazione di PC, MacBook e smartphone e installazione software, affiancando queste attività allo sviluppo di applicazioni web.
+            </p>
+            <div className="about__experience">
+              <h3>Assistenza informatica pratica</h3>
+              <p>Parto dall’ascolto del problema, ne analizzo le possibili cause e verifico la soluzione sul dispositivo. Problem solving, pazienza e attenzione al cliente guidano il mio modo di lavorare.</p>
+              <p>Spiego i passaggi in modo chiaro e aiuto le persone a usare la tecnologia con più autonomia: un approccio che voglio portare in un ruolo Junior IT Support, Help Desk o Tecnico Informatico.</p>
+            </div>
+            <p>Nei progetti web applico la stessa attenzione: capire un’esigenza, costruire una soluzione e migliorarla attraverso prove concrete.</p>
             <a href="mailto:valastro.dev@outlook.it">Scrivimi una mail <ArrowUpRight /></a>
           </div>
         </section>
@@ -347,7 +396,7 @@ function App() {
         <section className="skills">
           <div className="skills__orb" aria-hidden="true"><span>{`{ }`}</span></div>
           <div className="skills__content">
-            <span>05 / Stack</span>
+            <span>06 / Sviluppo web</span>
             <h2>Gli strumenti cambiano.<br /><em>Il modo di pensare resta.</em></h2>
             <div className="skills__grid">
               <div><small>Frontend & CMS</small><p>HTML · CSS · JavaScript<br />React · Bootstrap · Tailwind<br />WordPress</p></div>
@@ -357,9 +406,32 @@ function App() {
           </div>
         </section>
 
+        <section className="certifications" id="certificazioni" aria-labelledby="certifications-heading">
+          <header className="section-heading">
+            <span>07 / Certificazioni</span>
+            <h2 id="certifications-heading">Formazione solida.<br /><em>Pratica continua.</em></h2>
+            <p>Le basi digitali e le competenze di sviluppo che accompagnano il mio percorso nell’informatica.</p>
+          </header>
+          <div className="certifications__grid">
+            <article className="certification-card">
+              <span>01 / Sviluppo web</span>
+              <h3>EPICODE</h3>
+              <p className="certification-card__title">Full Stack Web Development</p>
+              <p>Formazione nello sviluppo di applicazioni web, dal frontend al backend, applicata a progetti concreti come EasyTrip.</p>
+            </article>
+            <article className="certification-card">
+              <span>02 / Competenze digitali</span>
+              <h3>ECDL</h3>
+              <p className="certification-card__title">Patente europea del computer</p>
+              <p>Competenze informatiche di base e utilizzo degli strumenti digitali a supporto delle attività quotidiane.</p>
+            </article>
+          </div>
+        </section>
+
         <footer className="contact" id="contatti">
-          <span>06 / Iniziamo</span>
-          <h2>Hai un’idea?<br /><em>Facciamola funzionare.</em></h2>
+          <span>08 / Parliamone</span>
+          <h2>Tecnologia e persone.<br /><em>Mettiamoci in contatto.</em></h2>
+          <p className="contact__intro">Cerchi un profilo junior per IT Support, Help Desk, assistenza tecnica o sviluppo web? Sono disponibile a parlare di nuove opportunità e progetti.</p>
           <div className="contact__channels">
             <a
               className="contact__mail"
@@ -383,7 +455,7 @@ function App() {
             </a>
           </div>
           <div className="contact__bottom">
-            <p>Christian Valastro · Web developer · Catania</p>
+            <p>Christian Valastro · IT Support & Web Development · Catania</p>
             <div><a href="https://github.com/christianvalastroo">GitHub</a><a href="https://www.linkedin.com/in/christian-valastro/">LinkedIn</a></div>
           </div>
         </footer>
