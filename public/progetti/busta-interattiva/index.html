@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050505" />
+    <title>24 Settembre — Invito di compleanno</title>
+    <link rel="stylesheet" href="styles.css?v=25" />
+  </head>
+  <body>
+    <main class="stage">
+      <div class="grain" aria-hidden="true"></div>
+      <div class="halo" aria-hidden="true"></div>
+      <div class="disco-lights" aria-hidden="true"><i></i><i></i><i></i><span></span><span></span></div>
+      <div class="flash" id="flash" aria-hidden="true"></div>
+      <div class="sparks" id="sparks" aria-hidden="true"></div>
+      <div class="shockwaves" id="shockwaves" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+      <section class="cover" id="cover">
+        <p class="micro">INVITO RISERVATO · 2026</p>
+        <button class="envelope" id="openInvite" aria-label="Apri l'invito">
+          <span class="paper"><b>24→25</b><i>CENA &amp; APERITIVO · ORE 20:30</i></span>
+          <span class="pocket"></span>
+          <span class="flap"></span>
+          <span class="fold fold-top"></span>
+          <span class="fold fold-right"></span>
+          <span class="fold fold-bottom"></span>
+          <span class="fold fold-left"></span>
+          <span class="monogram">C</span>
+        </button>
+        <div class="open-copy">
+          <span class="line"></span>
+          <button id="openText">APRI L’INVITO</button>
+          <span class="line"></span>
+        </div>
+      </section>
+
+      <section class="invitation" id="invitation" aria-hidden="true">
+        <audio id="birthdayMusic" preload="auto" playsinline>
+          <source src="assets/musica-invito.m4a" type="audio/mp4" />
+        </audio>
+        <div class="edition">STAPPIAMO<br />A MEZZANOTTE</div>
+        <header>
+          <p>SEI INVITATO AL MIO</p>
+          <h1>PRE<br /><span>COMPLEANNO</span></h1>
+        </header>
+        <p class="personal-message">Festeggiamo insieme l’ultimo brindisi prima del mio compleanno.</p>
+        <div class="date">
+          <strong>24</strong>
+          <div><b>SETTEMBRE</b><span>ORE 20:30 · CENA &amp; APERITIVO<br />ASPETTANDO INSIEME IL 25</span></div>
+        </div>
+        <div class="countdown" id="countdown" aria-live="polite" aria-label="Conto alla rovescia all'inizio della serata">
+          <p>CI VEDIAMO TRA</p>
+          <div>
+            <span><b id="countdownDays">00</b><small>GIORNI</small></span>
+            <i>:</i>
+            <span><b id="countdownHours">00</b><small>ORE</small></span>
+            <i>:</i>
+            <span><b id="countdownMinutes">00</b><small>MIN</small></span>
+            <i>:</i>
+            <span><b id="countdownSeconds">00</b><small>SEC</small></span>
+          </div>
+        </div>
+        <div class="info">
+          <p><small>DOVE</small>MUSCIANÒ · ME</p>
+          <p><small>CONFERMA</small>ENTRO IL 23 SETTEMBRE</p>
+        </div>
+        <div class="actions">
+          <a href="https://goo.gl/maps/irgZBUMm5XbRbhx27?g_st=aw" target="_blank" rel="noreferrer">APRI POSIZIONE ↗</a>
+          <button id="showRoute">GUARDA IL PERCORSO ▶</button>
+          <a class="whatsapp" href="https://wa.me/393665930593?text=Ciao%21%20Confermo%20la%20mia%20presenza%20alla%20cena%20e%20aperitivo%20del%2024%20settembre%20alle%2020%3A30%20%F0%9F%8E%89" target="_blank" rel="noreferrer">CONFERMA SU WHATSAPP</a>
+        </div>
+      </section>
+      <div class="video-modal" id="videoModal" aria-hidden="true">
+        <div class="video-panel">
+          <button class="close-video" id="closeVideo" aria-label="Chiudi il video">×</button>
+          <p>COME ARRIVARE</p>
+          <video id="routeVideo" controls playsinline preload="metadata">
+            <source src="assets/percorso-musciano.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </main>
+    <script src="script.js?v=25"></script>
+  </body>
+</html>

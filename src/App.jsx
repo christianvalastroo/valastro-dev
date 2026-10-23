@@ -3,7 +3,8 @@ import { ArrowDownRight, ArrowUpRight, Blocks, BriefcaseBusiness, Code2, Monitor
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import easytripPreview from './assets/projects/easytrip.png'
-import invitationPreview from './assets/projects/invito-18.png'
+import birthdayPreview from './assets/projects/invito-compleanno.jpg'
+import elegantBirthdayPreview from './assets/projects/invito-elegante.jpg'
 import SandBackground from './components/SandBackground'
 import LightningEffect from './components/LightningEffect'
 import { triggerLightning } from './utils/lightning'
@@ -37,23 +38,28 @@ const projects = [
   },
   {
     number: '02',
-    name: 'Next Project',
-    type: 'Nuova esperienza · In arrivo',
-    description: 'Sto lavorando a qualcosa di nuovo. Un progetto pensato per unire utilità, interazioni curate e una solida esperienza full-stack.',
-    tech: ['Research', 'Design', 'Development'],
-    status: 'In arrivo',
+    name: 'Inviti per compleanno',
+    type: 'Invito digitale · Busta interattiva',
+    description: 'Una busta animata si apre per svelare l’invito: musica, coriandoli, conto alla rovescia e conferma della presenza su WhatsApp accompagnano l’esperienza.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    href: 'https://github.com/christianvalastroo/invito-compleanno',
+    live: '/progetti/busta-interattiva/index.html',
+    preview: birthdayPreview,
+    previewAlt: 'Schermata reale dell’invito con busta argentata e sigillo arancio',
+    portrait: true,
     accent: '#8bf5dc',
   },
   {
     number: '03',
-    name: 'Invito del 18°',
-    type: 'Frontend · Interactive experience',
-    description: 'Un invito digitale pensato per smartphone: una busta argentata si apre e trasforma un gesto semplice in un momento speciale.',
-    tech: ['React', 'Vite', 'CSS', 'Motion'],
-    href: 'https://github.com/christianvalastroo/invito-18',
-    live: 'https://invito-18.vercel.app/',
-    preview: invitationPreview,
-    previewAlt: 'Busta interattiva dell’Invito del 18°',
+    name: 'Inviti per compleanno',
+    type: 'Invito digitale · Eleganza e animazione',
+    description: 'Un invito in toni bordeaux e oro, con una busta animata, dettagli luminosi e musica. Luogo, informazioni e conferma della presenza sono raccolti in un’unica esperienza.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    href: 'https://github.com/christianvalastroo/invito-Martina',
+    live: '/progetti/invito-elegante/index.html',
+    preview: elegantBirthdayPreview,
+    previewAlt: 'Schermata reale dell’invito con busta bordeaux, dettagli dorati e cristalli',
+    portrait: true,
     accent: '#f5f1e8',
   },
 ]
@@ -303,16 +309,12 @@ function App() {
 
           <div className="projects__list">
             {projects.map((project) => (
-              <article className="project-card" key={project.name} style={{ '--project-accent': project.accent }}>
+              <article className="project-card" key={project.number} style={{ '--project-accent': project.accent }}>
                 <div className="project-card__number">{project.number}</div>
                 <div className="project-card__stage">
-                  <div className="project-card__window">
+                  <div className={`project-card__window${project.portrait ? ' project-card__window--portrait' : ''}`}>
                     <span /><span /><span />
-                    {project.preview
-                      ? <img src={project.preview} alt={project.previewAlt} />
-                      : <div className="project-card__code" aria-hidden="true">
-                          <i>const idea =</i><b>{`{ ${project.name} }`}</b><i>build → test → improve</i>
-                        </div>}
+                    <img src={project.preview} alt={project.previewAlt} loading="lazy" decoding="async" />
                   </div>
                 </div>
                 <div className="project-card__content">
@@ -321,10 +323,8 @@ function App() {
                   <p className="project-card__description">{project.description}</p>
                   <ul>{project.tech.map((item) => <li key={item}>{item}</li>)}</ul>
                   <div className="project-card__actions">
-                    {project.live && <a className="project-card__live" href={project.live} target="_blank" rel="noreferrer">Apri applicazione <ArrowUpRight /></a>}
-                    {project.href
-                      ? <a href={project.href} target="_blank" rel="noreferrer">Vedi codice <Code2 /></a>
-                      : <span className="project-card__status"><i />{project.status}</span>}
+                    {project.live && <a className="project-card__live" href={project.live} target="_blank" rel="noreferrer">Apri progetto <ArrowUpRight /></a>}
+                    <a href={project.href} target="_blank" rel="noreferrer">Vedi codice <Code2 /></a>
                   </div>
                 </div>
               </article>
